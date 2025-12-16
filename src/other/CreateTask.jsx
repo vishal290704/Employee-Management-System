@@ -26,7 +26,7 @@ const CreateTask = () => {
                 <div className='w-2/5 flex flex-col items-start'>
                     <h3 className='text-sm text-gray-300 mb-1'>Task Description</h3>
                 <textarea className='w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border-[1px] border-gray-400' name='' id='' placeholder='Create a modern and responsive UI design for the new project.'></textarea>
-                <button className='bg-emerald-500 bg-gray-2 hover:bg-emerald-600 px-5 py-2 rounded text-sm mt-4 w-full' type='submit'>Create Task</button>
+                <button className='bg-emerald-600 bg-gray-2 hover:bg-emerald-700 px-5 py-2 rounded text-sm mt-4 w-full' type='submit'>Create Task</button>
                 </div>
                 
                 
