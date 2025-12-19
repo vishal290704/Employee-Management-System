@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { use, useContext, useEffect, useState } from 'react'
 import Login from './components/Auth/Login'
 import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
@@ -8,16 +8,32 @@ import { AuthContext } from './context/AuthProvider'
 const App = () => {
 
  const [user, setUser] = useState(null)
+ const [loggedInUserData, setLoggedInUserData] = useState(null )
  const authData = useContext(AuthContext)
-console.log(authData);
+
+//  useEffect(() => {
+//   if(authData){
+//     const loggedInUser = localStorage.getItem("loggedInUser")
+//     if(loggedInUser){
+//       setUser(loggedInUser.role)
+//     }
+//   }
+//     }, [authData])
 
  const handleLogin = (email, password) =>{
     
     // Logic to authenticate user
-    if(email == 'admin@me.com' && password == '123'){
+    if(email == 'admin@example.com' && password == '123'){
           setUser('admin')
-        }else if(email == 'user@me.com' && password == '123'){
-          setUser('employee')
+          localStorage.setItem('loogedInUser', JSON.stringify({role: 'admin'}))
+        }else if(authData){
+          const employee =  authData.employees.find((e)=> e.email ==email && e.password == password)
+          if(employee){
+            setUser('employee')
+            setLoggedInUserData(employee)
+            localStorage.setItem('loogedInUser', JSON.stringify({role: 'employee'}))
+          }
+          
         }else{
           alert("Invalid credentials");
         }
@@ -28,7 +44,7 @@ console.log(authData);
   return (
     <>
     {!user ? <Login handleLogin={handleLogin} /> : ''}
-    {user =='admin' ? <AdminDashboard/> : <EmployeeDashboard/>}
+    {user =='admin' ? <AdminDashboard/> : (user == 'employee' ? <EmployeeDashboard loggedInUserData={loggedInUserData} /> : '')}
     
     </>
   )
