@@ -31,7 +31,7 @@ const App = () => {
           if(employee){
             setUser('employee')
             setLoggedInUserData(employee)
-            localStorage.setItem('loogedInUser', JSON.stringify({role: 'employee'}))
+            localStorage.setItem('loggedInUser', JSON.stringify({role: 'employee'}))
           }
           
         }else{

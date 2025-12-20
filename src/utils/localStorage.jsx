@@ -1,8 +1,17 @@
+
+
 const employees = [
   {
     id: 1,
+    firstName: "Amit",
     email: "emp1@example.com",
     password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Build Login UI",
@@ -38,8 +47,15 @@ const employees = [
   },
   {
     id: 2,
+    firstName: "Rahul",
     email: "emp2@example.com",
     password: "123",
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0
+    },
     tasks: [
       {
         title: "API Integration",
@@ -75,8 +91,15 @@ const employees = [
   },
   {
     id: 3,
+    firstName: "Priya",
     email: "emp3@example.com",
     password: "123",
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0
+    },
     tasks: [
       {
         title: "Design Dashboard",
@@ -112,8 +135,15 @@ const employees = [
   },
   {
     id: 4,
+    firstName: "Suresh",
     email: "emp4@example.com",
     password: "123",
+    taskNumbers: {
+      active: 1,
+      newTask: 1,
+      completed: 1,
+      failed: 1
+    },
     tasks: [
       {
         title: "Database Schema",
@@ -149,8 +179,15 @@ const employees = [
   },
   {
     id: 5,
+    firstName: "Neha",
     email: "emp5@example.com",
     password: "123",
+    taskNumbers: {
+      active: 2,
+      newTask: 1,
+      completed: 1,
+      failed: 0
+    },
     tasks: [
       {
         title: "Write Unit Tests",
