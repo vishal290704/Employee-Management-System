@@ -27,7 +27,7 @@ useEffect(()=>{
     // Logic to authenticate user
     if(email == 'admin@example.com' && password == '123'){
           setUser('admin')
-          localStorage.setItem('loogedInUser', JSON.stringify({role: 'admin'}))
+          localStorage.setItem('loggedInUser', JSON.stringify({role: 'admin'}))
         }else if(authData){
           const employee =  authData.employees.find((e)=> e.email ==email && e.password == password)
           if(employee){
