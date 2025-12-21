@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header = ({data}) => {
   // console.log(data);
+  const [userName, setUserName] = useState('')
   
   return (
     <div className='flex items-end justify-between'> 
