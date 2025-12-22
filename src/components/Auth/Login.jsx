@@ -39,7 +39,7 @@ const Login = ({handleLogin}) => {
                 className='text-white w-full outline-none bg-transparent border-2 border-blue-600 rounded-full px-6 py-3 mb-3 text-xl placeholder:text-gray-400' type = "password" placeholder='Enter your password'>
                 </input>
 
-                <button className='w-full outline-none bg-red-500 border-none rounded-full px-6 py-3 mb-3 text-xl !text-gray-300' type='submit'>Login</button>
+                <button className='w-full outline-none bg-red-500 border-none rounded-full px-6 py-3 mb-3 text-xl text-gray-300!' type='submit'>Login</button>
             </form>
  
         </div>
