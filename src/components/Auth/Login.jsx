@@ -16,7 +16,7 @@ const Login = ({ handleLogin }) => {
       {/* Login Card */}
       <div
         className="bg-[#111827] border border-gray-700 
-                rounded-xl p-12 w-[420px] 
+                rounded-xl p-12 w-105 
                 shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
       >
         <h2 className="text-3xl font-bold text-white text-center">Login</h2>
