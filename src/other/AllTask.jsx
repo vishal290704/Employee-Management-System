@@ -19,14 +19,15 @@ const AllTask = () => {
         {authData.employees.map(function(elem){
         return  <div className='bg-gray-900 border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'>
             <h2 className='w-1/5'>{elem.firstName}</h2>
-            <h3 className='w-1/5 text-blue-400'>Task</h3>
-            <h5 className='w-1/5 text-yellow-400'>Status</h5>
-            <h5 className='w-1/5 text-green-400'>Status</h5>
-            <h5 className='w-1/5 text-red-400'>Status</h5>
+            <h3 className='w-1/5 text-blue-500'>{elem.taskNumbers.newTask}</h3>
+            <h5 className='w-1/5 text-yellow-400'>{elem.taskNumbers.active}</h5>
+            <h5 className='w-1/5 text-green-400'>{elem.taskNumbers.completed}</h5>
+            <h5 className='w-1/5 text-red-400'>{elem.taskNumbers.failed}</h5>
         </div>
       })}
     </div>
        
+
          {/* <div className='bg-blue-700 mb-2 py-2 px-4 flex justify-between rounded'>
             <h2>Vishal</h2>
             <h3>Make a UI design</h3>
