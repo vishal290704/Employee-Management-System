@@ -32,7 +32,7 @@ const Login = ({ handleLogin }) => {
             required
             type="email"
             placeholder="Email"
-            className="bg-[#020617] border border-gray-600 rounded-md px-4 py-3
+            className="bg-[#020617] border border-gray-600 rounded-xl px-4 py-3
            text-white outline-none placeholder:text-gray-500
            focus:border-blue-500 focus:ring-1 focus:ring-blue-500/40
            transition"
@@ -45,7 +45,7 @@ const Login = ({ handleLogin }) => {
             required
             type="password"
             placeholder="Password"
-            className="bg-[#020617] border border-gray-600 rounded-md px-4 py-3
+            className="bg-[#020617] border border-gray-600 rounded-xl px-4 py-3
            text-white outline-none placeholder:text-gray-500
            focus:border-blue-500 focus:ring-1 focus:ring-blue-500/40
            transition"
@@ -55,7 +55,7 @@ const Login = ({ handleLogin }) => {
           <button
             type="submit"
             className="mt-4 bg-blue-600 hover:bg-blue-700
-           text-white font-medium py-3 rounded-md
+           text-white font-medium py-3 rounded-xl
            transition active:scale-[0.98]"
 
           >
