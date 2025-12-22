@@ -1,50 +1,74 @@
-import React from 'react'
-import { useState } from 'react';
+import React, { useState } from "react";
 
-const Login = ({handleLogin}) => {
-    
-    const [email, setEmail] = useState("")
-    const [password, setPassword] = useState("")
+const Login = ({ handleLogin }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const submitHandler = (e) => {
-        e.preventDefault();
-        handleLogin(email, password);
-        setEmail("");
-        setPassword("");
-    }
+  const submitHandler = (e) => {
+    e.preventDefault();
+    handleLogin(email, password);
+    setEmail("");
+    setPassword("");
+  };
 
   return (
-    <div className='bg-black flex h-screen w-screen items-center justify-center'>
-        <div className='border-2 border-blue-600 rounded-xl  p-20'>
-            <form 
-            onSubmit={(e) => {
-                submitHandler(e);
-            }}
-            className='flex flex-col items-center w-70 justify-center'>  
-                <input
-                value={email}
-                onChange={(e) => {
-                    setEmail(e.target.value);
-                }}  
-                 required 
-                 className='text-white w-full outline-none bg-transparent border-2 border-blue-600 rounded-full px-6 py-3 mb-3 text-xl placeholder:text-gray-400' type = "email" placeholder='Enter your email'>
-                </input> 
+    <div className="min-h-screen flex items-center justify-center bg-[#0f172a]">
+      {/* Login Card */}
+      <div
+        className="bg-[#111827] border border-gray-700 
+                rounded-xl p-12 w-[420px] 
+                shadow-[0_20px_40px_rgba(0,0,0,0.6)]"
+      >
+        <h2 className="text-3xl font-bold text-white text-center">Login</h2>
 
-                <input 
-                value={password}
-                onChange={(e) => {
-                    setPassword(e.target.value);
-                }}
-                required 
-                className='text-white w-full outline-none bg-transparent border-2 border-blue-600 rounded-full px-6 py-3 mb-3 text-xl placeholder:text-gray-400' type = "password" placeholder='Enter your password'>
-                </input>
+        <p className="text-gray-400 text-center mt-1 mb-6">
+          Employee Management System
+        </p>
 
-                <button className='w-full outline-none bg-red-500 border-none rounded-full px-6 py-3 mb-3 text-xl text-gray-300!' type='submit'>Login</button>
-            </form>
- 
-        </div>
+        <form onSubmit={submitHandler} className="flex flex-col gap-4">
+          <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            type="email"
+            placeholder="Email"
+            className="bg-[#020617] border border-gray-600 rounded-md px-4 py-3
+           text-white outline-none placeholder:text-gray-500
+           focus:border-blue-500 focus:ring-1 focus:ring-blue-500/40
+           transition"
+
+          />
+
+          <input
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            type="password"
+            placeholder="Password"
+            className="bg-[#020617] border border-gray-600 rounded-md px-4 py-3
+           text-white outline-none placeholder:text-gray-500
+           focus:border-blue-500 focus:ring-1 focus:ring-blue-500/40
+           transition"
+
+          />
+
+          <button
+            type="submit"
+            className="mt-4 bg-blue-600 hover:bg-blue-700
+           text-white font-medium py-3 rounded-md
+           transition active:scale-[0.98]"
+
+          >
+            Login
+          </button>
+        </form>
+
+        <p className="text-xs text-gray-400 text-center mt-6">
+          Secure Access • EMS Portal
+        </p>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;
