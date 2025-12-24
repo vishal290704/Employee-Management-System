@@ -6,13 +6,31 @@ const CreateTask = () => {
   const [taskDate, setTaskDate] = useState("");
   const [assignTo, setAssignTo] = useState("");
   const [category, setCategory] = useState("");
+  const [task, setTask] = useState({})
 
   const submitHandler = (e) => {
     e.preventDefault();
-    const [task, setTask] = useState({})
-    setTask({taskTitle,taskDescription,taskDate,assignTo,category,active:false, newTask:true, failed: true, completed:false})
-
+    const allNewTask = {
+    taskTitle,
+    taskDescription,
+    taskDate,
+    assignTo,
+    category,
+    active: false,
+    newTask: true,
+    failed: false,
+    completed: false,
   };
+  setTask(allNewTask);
+    console.log(allNewTask);
+
+//   Reset all states once form is submitted
+  setTaskTitle("");
+  setTaskDescription("");
+  setTaskDate("");
+  setAssignTo("");
+  setCategory("");
+  }
   return (
     <div className="p-5 bg-[#1c1c1c] mt-7 rounded">
       <form
@@ -27,7 +45,7 @@ const CreateTask = () => {
             <input
                 value={taskTitle}
                 onChange={(e)=>{
-                    setTaskTitle(e.target.taskTitle)
+                    setTaskTitle(e.target.value)
                 }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="text"
@@ -39,7 +57,7 @@ const CreateTask = () => {
             <input
              value={taskDate}
                 onChange={(e)=>{
-                    setTaskDate(e.target.taskDate)
+                    setTaskDate(e.target.value)
                 }}
               className="[&::-webkit-calendar-picker-indicator]:invert text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="date"
@@ -50,7 +68,7 @@ const CreateTask = () => {
             <input
              value={assignTo}
                 onChange={(e)=>{
-                    setAssignTo(e.target.assignTo)
+                    setAssignTo(e.target.value)
                 }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="text"
@@ -62,7 +80,7 @@ const CreateTask = () => {
             <input
              value={category}
                 onChange={(e)=>{
-                    setCategory(e.target.category)
+                    setCategory(e.target.value)
                 }}
               className="text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border border-gray-400 mb-4"
               type="text"
@@ -76,7 +94,7 @@ const CreateTask = () => {
           <textarea
            value={taskDescription}
                 onChange={(e)=>{
-                    setTaskDescription(e.target.taskDescription)
+                    setTaskDescription(e.target.value)
                 }}
             className="w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border border-gray-400"
             name=""
