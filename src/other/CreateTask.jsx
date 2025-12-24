@@ -9,8 +9,8 @@ const CreateTask = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    // console.log("Task Created");
-    const [task, setTask] = useState([])
+    const [task, setTask] = useState({})
+    setTask({taskTitle,taskDescription,taskDate,assignTo,category,active:false, newTask:true, failed: true, completed:false})
 
   };
   return (
