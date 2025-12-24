@@ -24,8 +24,11 @@ const CreateTask = () => {
   const data = JSON.parse(localStorage.getItem('employees'))
     // console.log(data);
     data.forEach(function(elem){
-        console.log(elem);
-        
+        // console.log(elem.firstName);
+        if(assignTo == elem.firstName) {
+            console.log("yahi hai vo");
+            
+        }       
     })
 
 //   Reset all states once form is submitted
