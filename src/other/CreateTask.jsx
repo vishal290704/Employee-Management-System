@@ -1,6 +1,9 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthProvider";
 
 const CreateTask = () => {
+    const [userData, setUserData] = useContext(AuthContext)
+
   const [taskTitle, setTaskTitle] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
   const [taskDate, setTaskDate] = useState("");
@@ -21,18 +24,18 @@ const CreateTask = () => {
     completed: false,
   };
   setNewTask(allNewTask);
-  const data = JSON.parse(localStorage.getItem('employees'))
-    // console.log(data);
+  const data = userData.employees
+    console.log(data);
     data.forEach(function(elem){
         // console.log(elem.firstName);
         if(assignTo == elem.firstName) {
             // console.log(elem.tasks);
             elem.tasks.push(newTask)
-            console.log(elem);
+            // console.log(elem);
             
         }       
     })
-    
+    // localStorage.setItem('employees', JSON.stringify(data))
 
 //   Reset all states once form is submitted
   setTaskTitle("");
