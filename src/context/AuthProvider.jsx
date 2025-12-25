@@ -8,14 +8,14 @@ export const AuthContext = createContext();
 const AuthProvider = ({ children }) => {
   const [userData, setUserData] = useState(null);
 
-  // 1️⃣ Load data on app start
+  //Load data when app starts
   useEffect(() => {
     setLocalStorage(); // seed once
     const { employees } = getLocalStorage();
     setUserData(employees);
   }, []);
 
-  // 2️⃣ Sync changes back to localStorage
+  // Save changes back again to localStorage
   useEffect(() => {
     if (userData) {
       localStorage.setItem("employees", JSON.stringify(userData));

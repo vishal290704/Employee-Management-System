@@ -24,13 +24,13 @@ useEffect(()=>{
 
 const handleLogin = (email, password) => {
 
-  // ❗ Prevent login before data loads
+  //stop login before data loads
   if (!userData) {
     alert("Please wait, loading data...");
     return;
   }
 
-  // Admin login
+  // Admin login code
   if (email === 'admin@example.com' && password === '123') {
     setUser('admin');
     localStorage.setItem(
@@ -40,7 +40,7 @@ const handleLogin = (email, password) => {
     return;
   }
 
-  // Employee login
+  // Employee login code
   const employee = userData.find(
     (e) => e.email === email && e.password === password
   );
@@ -59,8 +59,6 @@ const handleLogin = (email, password) => {
 };
 
 
-
-     
 
   return (
     <>
