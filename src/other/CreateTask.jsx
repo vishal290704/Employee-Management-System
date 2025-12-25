@@ -6,7 +6,7 @@ const CreateTask = () => {
   const [taskDate, setTaskDate] = useState("");
   const [assignTo, setAssignTo] = useState("");
   const [category, setCategory] = useState("");
-  const [task, setTask] = useState({})
+  const [newTask, setNewTask] = useState({})
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -20,16 +20,19 @@ const CreateTask = () => {
     failed: false,
     completed: false,
   };
-  setTask(allNewTask);
+  setNewTask(allNewTask);
   const data = JSON.parse(localStorage.getItem('employees'))
     // console.log(data);
     data.forEach(function(elem){
         // console.log(elem.firstName);
         if(assignTo == elem.firstName) {
-            console.log("yahi hai vo");
+            // console.log(elem.tasks);
+            elem.tasks.push(newTask)
+            console.log(elem);
             
         }       
     })
+    
 
 //   Reset all states once form is submitted
   setTaskTitle("");
