@@ -4,6 +4,7 @@ import EmployeeDashboard from './components/Dashboard/EmployeeDashboard'
 import AdminDashboard from './components/Dashboard/AdminDashboard'
 // import { getLocalStorage, setLocalStorage } from './utils/localStorage'
 import { AuthContext } from './context/AuthProvider'
+import Loader from './other/Loader'
 
 const App = () => {
 
@@ -58,6 +59,9 @@ const handleLogin = (email, password) => {
   alert("Invalid credentials");
 };
 
+if (!userData) {
+  return <Loader />;
+}
 
 
   return (
