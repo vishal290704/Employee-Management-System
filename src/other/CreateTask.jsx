@@ -41,7 +41,7 @@ const CreateTask = () => {
 
     setUserData(updatedData);
 
-    // reset
+    // reset all forms input once after submitted
     setTaskTitle("");
     setTaskDescription("");
     setTaskDate("");
@@ -55,7 +55,7 @@ const CreateTask = () => {
         onSubmit={submitHandler}
         className="grid grid-cols-1 md:grid-cols-2 gap-6"
       >
-        {/* ===== LEFT SECTION ===== */}
+        {/* left section  */}
         <div className="space-y-4">
           <div>
             <h3 className="text-sm text-gray-300 mb-1">Task Title</h3>
@@ -151,7 +151,7 @@ const CreateTask = () => {
           </div>
         </div>
 
-        {/* ===== RIGHT SECTION ===== */}
+            {/* right section  */}
         <div className="flex flex-col">
           <h3 className="text-sm text-gray-300 mb-1">Task Description</h3>
           <textarea
