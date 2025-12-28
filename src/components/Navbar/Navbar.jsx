@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../context/ThemeContext";
 
-const Navbar = ({ handleLogout }) => {
+const Navbar = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
