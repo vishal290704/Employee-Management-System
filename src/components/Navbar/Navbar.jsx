@@ -10,7 +10,7 @@ const Navbar = () => {
                  justify-center
                   dark:border-gray-700"
     >
-      {/* Right side container */}
+      {/* right side container */}
       <div className="ml-auto flex items-center">
         <button
           onClick={toggleTheme}
